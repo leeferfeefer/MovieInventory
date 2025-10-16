@@ -28,7 +28,7 @@
 }
 
 .rotating {
-  animation: rotate 10s linear infinite;
+  animation: rotate 2s linear infinite;
 }
 
 .card {

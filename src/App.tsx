@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useState, useRef } from "react";
+import { useCallback, useState, useRef } from "react";
 import "./App.css";
 import BarcodeScanner from "react-qr-barcode-scanner";
 import MeCrazy from "./assets/me-crazy-small.jpg";
+import { getMovieInfo } from "./services/upc.service";
 
 const scannerButtonTextOptions = {
   show: "Show Scanner",
@@ -11,7 +12,7 @@ const scannerButtonTextOptions = {
 function App() {
   const [data, setData] = useState("Not Found");
   const [showScanner, setShowScanner] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const scannedUpc = useRef<string | null>(null);
 
   const toggleShowScanner = useCallback(() => {
@@ -22,8 +23,23 @@ function App() {
     ? scannerButtonTextOptions.hide
     : scannerButtonTextOptions.show;
 
+  const fetchMovieInfo = useCallback(async (upc: string) => {
+    setIsLoading(true);
+    const info = getMovieInfo(upc);
+    console.log("Movie info:", info);
+    setIsLoading(false);
+  }, []);
+
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "20px",
+        padding: "20px",
+      }}
+    >
       <button onClick={toggleShowScanner}>{scannerButtonText}</button>
       {showScanner && (
         <BarcodeScanner
@@ -37,26 +53,31 @@ function App() {
             if (result) {
               const resultText = result.getText();
               setData(resultText);
-              scannedUpc.current = resultText;
+              if (resultText !== scannedUpc.current) {
+                scannedUpc.current = resultText;
+                fetchMovieInfo(scannedUpc.current);
+              }
             } else {
               setData("Not Found");
             }
           }}
         />
       )}
-      <p>{data}</p>
-      <img
-        src={MeCrazy}
-        alt="me-crazy"
-        className={isLoading ? "rotating" : ""}
-        style={{
-          height: "100px",
-          width: "100px",
-          objectFit: "cover",
-          borderRadius: "50%",
-        }}
-      />
-    </>
+      <p>Scanned Results: {data}</p>
+      {isLoading && (
+        <img
+          src={MeCrazy}
+          alt="me-crazy"
+          className={isLoading ? "rotating" : ""}
+          style={{
+            height: "100px",
+            width: "100px",
+            objectFit: "cover",
+            borderRadius: "50%",
+          }}
+        />
+      )}
+    </div>
   );
 }
 
