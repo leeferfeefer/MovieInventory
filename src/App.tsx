@@ -24,10 +24,15 @@ function App() {
     : scannerButtonTextOptions.show;
 
   const fetchMovieInfo = useCallback(async (upc: string) => {
-    setIsLoading(true);
-    const info = getMovieInfo(upc);
-    console.log("Movie info:", info);
-    setIsLoading(false);
+    try {
+      setIsLoading(true);
+      const info = await getMovieInfo(upc);
+      console.log("Movie info:", info);
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   return (

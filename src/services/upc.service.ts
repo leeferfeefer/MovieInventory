@@ -2,17 +2,22 @@
 
 // https://api.upcitemdb.com/prod/trial/lookup?upc=683904632197
 
-export async function getMovieInfo(
-  upc: string
-): Promise<UpcDBResponse | undefined> {
-  let data: UpcDBResponse | undefined;
+export async function getMovieInfo(upc: string): Promise<UpcDBResponse | undefined> {
   try {
-    const response = await fetch(
-      `https://api.upcitemdb.com/prod/trial/lookup?upc=${upc}`
-    );
-    data = await response.json();
+    const response = await fetch(`http://localhost:3000/api/movie_info?upc=${upc}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    return await response.json();
   } catch (error) {
-    console.error("Error fetching movie info:", error);
+    console.error('Error fetching movie info:', error);
+    throw error;
   }
-  return data;
 }
