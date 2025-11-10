@@ -36,20 +36,12 @@ function App() {
   }, []);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "20px",
-        padding: "20px",
-      }}
-    >
+    <div className="app-container">
       <button onClick={toggleShowScanner}>{scannerButtonText}</button>
       {showScanner && (
         <BarcodeScanner
-          width={500}
-          height={500}
+          width="100%"
+          height="auto"
           onUpdate={(err, result) => {
             if (err) {
               console.error(err);
@@ -68,15 +60,15 @@ function App() {
           }}
         />
       )}
-      <p>Scanned Results: {data}</p>
+      <p className="scanned-results">Scanned Results: {data}</p>
       {isLoading && (
         <img
           src={MeCrazy}
           alt="me-crazy"
           className={isLoading ? "rotating" : ""}
           style={{
-            height: "100px",
-            width: "100px",
+            height: "80px",
+            width: "80px",
             objectFit: "cover",
             borderRadius: "50%",
           }}
