@@ -4,7 +4,7 @@
 
 export async function getMovieInfo(upc: string): Promise<UpcDBResponse | undefined> {
   try {
-    const response = await fetch(`http://localhost:3000/api/movie_info?upc=${upc}`, {
+    const response = await fetch(`https://${import.meta.env.VITE_IP}:3000/api/movie_info?upc=${upc}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
