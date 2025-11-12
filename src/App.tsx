@@ -1,17 +1,28 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useCallback, useState, useRef } from "react";
-import "./App.css";
-import BarcodeScanner from "react-qr-barcode-scanner";
+import React, { useCallback, useState, useRef } from "react";
+import BarcodeScannerComponent from "./components/BarcodeScannerComponent";
+import MovieInfoModal from "./components/MovieInfoModal";
 import MeCrazy from "./assets/me-crazy-small.jpg";
 import { getMovieInfo } from "./services/upc.service";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "./App.css";
 
-const scannerButtonTextOptions = {
-  show: "Show Scanner",
-  hide: "Hide Scanner",
-};
+
+/**
+ * TODO
+ * 
+ * Break out this shit in smaller components
+ * Add to DB functionality
+ * Fix styling
+ * Rescan ability - Clear what is scanned?
+ * Show photo ability of what was last scanned? - After modal is closed
+ * Move the loader to be a overlay centered to screen
+ * Remove from DB ability
+ * Display description?
+ * Search (by name, actor, description, genre, rating, etc.)
+ * Rating system?
+ * Mark as watched?
+ * Random chooser
+ * 
+ */
 
 function App() {
   const [data, setData] = useState("Not Found");
@@ -25,10 +36,6 @@ function App() {
     setShowScanner((prev) => !prev);
   }, []);
 
-  const scannerButtonText = showScanner
-    ? scannerButtonTextOptions.hide
-    : scannerButtonTextOptions.show;
-
   const fetchMovieInfo = useCallback(async (upc: string) => {
     try {
       setIsLoading(true);
@@ -40,54 +47,22 @@ function App() {
         setMovieInfo(null);
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error fetching movie info:", error);
     } finally {
       setIsLoading(false);
     }
   }, []);
 
-  const renderCarousel = () => {
-    if (!movieInfo || !movieInfo.images || movieInfo.images.length === 0) {
-      return <p>No images available</p>;
-    }
-
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    };
-
-    return (
-      <Slider {...settings}>
-        {movieInfo.images.map((image, index) => (
-          <div key={index}>
-            <img
-              src={image}
-              alt={`Movie image ${index + 1}`}
-              style={{ width: "100%", height: "auto" }}
-            />
-          </div>
-        ))}
-      </Slider>
-    );
-  };
-
   return (
     <div className="app-container">
-      <button onClick={toggleShowScanner}>{scannerButtonText}</button>
+      <button onClick={toggleShowScanner}>
+        {showScanner ? "Hide Scanner" : "Show Scanner"}
+      </button>
       {showScanner && (
-        <BarcodeScanner
-          width="100%"
-          height="auto"
+        <BarcodeScannerComponent
           onUpdate={(err, result) => {
             if (err) {
-              if ((err as any).name === "NotFoundException2") {
-                console.debug("Barcode not found. Please adjust the camera.");
-                return;
-              }
-              console.error(err);
+              console.error("Scanner error:", err);
               return;
             }
             if (result) {
@@ -107,8 +82,8 @@ function App() {
       {isLoading && (
         <img
           src={MeCrazy}
-          alt="me-crazy"
-          className={isLoading ? "rotating" : ""}
+          alt="Loading..."
+          className="rotating"
           style={{
             height: "80px",
             width: "80px",
@@ -117,15 +92,11 @@ function App() {
           }}
         />
       )}
-      {isModalOpen && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <button className="close-button" onClick={() => setIsModalOpen(false)}>
-              Close
-            </button>
-            {renderCarousel()}
-          </div>
-        </div>
+      {isModalOpen && movieInfo && (
+        <MovieInfoModal
+          images={movieInfo.images}
+          onClose={() => setIsModalOpen(false)}
+        />
       )}
     </div>
   );
