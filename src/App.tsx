@@ -5,7 +5,6 @@ import MeCrazy from "./assets/me-crazy-small.jpg";
 import { getMovieInfo } from "./services/upc.service";
 import "./App.css";
 
-
 /**
  * TODO
  * 
