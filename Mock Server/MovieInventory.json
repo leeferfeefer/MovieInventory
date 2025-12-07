@@ -1,0 +1,94 @@
+{
+    "uuid": "69765084-5684-41de-92ad-b6b66d77de30",
+    "lastMigration": 33,
+    "name": "MovieInventory",
+    "endpointPrefix": "",
+    "latency": 0,
+    "port": 3001,
+    "hostname": "",
+    "folders": [],
+    "routes": [
+        {
+            "uuid": "f0be3255-d116-4525-af10-739ecd7680a7",
+            "type": "http",
+            "documentation": "Movie Data from UPC item db",
+            "method": "get",
+            "endpoint": "prod/trial/lookup",
+            "responses": [
+                {
+                    "uuid": "08fb1a7c-411b-4a44-800f-4fe5820bb13a",
+                    "body": "{\"code\":\"OK\",\"total\":1,\"offset\":0,\"items\":[{\"ean\":\"0883929085163\",\"title\":\"Matrix  The 10th Anniversary (BD) (Blu-ray 10th Anniversary Edition) [Blu-ray]\",\"description\":\"Perception: Our day-in  day-out world is real. Reality: That world is a hoax  an elaborate deception spun by all-powerful machines of artificial intelligence that control us. Keanu Reeves and Laurence Fishbourne lead the fight to free humankind in the see-and-see-again cyberthriller written and directed by the Wachowski brothers and the winner of four Academy Awards.\",\"upc\":\"883929085163\",\"brand\":\"Warner Bros.\",\"model\":\"1000109816\",\"color\":\"Gold\",\"size\":\"\",\"dimension\":\"\",\"weight\":\"1.55lb\",\"category\":\"Media > DVDs & Videos\",\"currency\":\"CAD\",\"lowest_recorded_price\":1.59,\"highest_recorded_price\":55.52,\"images\":[\"https://i5.walmartimages.com/asr/768321b8-358b-4b4c-8153-ed0f5f9749c9.b750ce7077ff86b51ae9a531d2d7c550.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff\",\"https://target.scene7.com/is/image/Target/GUEST_542164f3-0c35-4aa5-a910-baf24716e8f7?wid=1000&hei=1000\",\"http://c.shld.net/rpx/i/s/pi/mp/9150/1882721002?src=http%3A%2F%2Fcp75.com%2FImages%2F883929085163.jpg&d=0db8dbb620f96c89a29777e28bbb017347e87093\",\"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/1456/1456408_sa.jpg\",\"https://c1.neweggimages.com/NeweggImage/productimage/883929085163-03.jpg\",\"http://d3d71ba2asa5oz.cloudfront.net/13000046/images/xp16warbr109816__1.jpg\",\"http://images10.newegg.com/ProductImageCompressAll200/883929085163-03.jpg\",\"http://site.unbeatablesale.com/EB254/igme43510.gif\",\"http://www.shoptv.com/imgcache/product/resized/000/430/938/catl/00430938-122099_100.jpg?k=724dd18b&pid=430938&s=catl&sn=\",\"https://tshop.r10s.com/de9/bdc/779b/88ae/70f0/08f0/f6a8/1157e9aa01a81e84d03674.jpg?_ex=512x512\"],\"offers\":[{\"merchant\":\"Newegg Canada\",\"domain\":\"Newegg Canada\",\"title\":\"MATRIX (BLU-RAY/10TH ANNIVERSARY)\",\"currency\":\"CAD\",\"list_price\":\"\",\"price\":46.34,\"shipping\":\"Free Shipping\",\"condition\":\"New\",\"availability\":\"Out of Stock\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=y2w2y2t233z2b4a4y2&tid=1&seq=1765119914&plt=2761c475ef296b698688019ca8b1b651\",\"updated_t\":1613530200},{\"merchant\":\"DealYard\",\"domain\":\"dealyard.com\",\"title\":\"MATRIX (BR/10TH ANNIVERSARY)\",\"currency\":\"\",\"list_price\":\"\",\"price\":21.2,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=v2q253t2v2z2e444q2&tid=1&seq=1765119914&plt=f36bfc8f31fa05e8926d7a6ba70bd4f3\",\"updated_t\":1485889597},{\"merchant\":\"Newegg.com\",\"domain\":\"newegg.com\",\"title\":\"The Matrix (Blu-ray / WS / 1999)\",\"currency\":\"\",\"list_price\":\"\",\"price\":17.11,\"shipping\":\"Free Shipping\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=u2q2z2w243x2e494r2&tid=1&seq=1765119914&plt=7734ccec155546951ca898fd7c80554c\",\"updated_t\":1479203809},{\"merchant\":\"UnbeatableSale.com\",\"domain\":\"unbeatablesale.com\",\"title\":\"WAR BR109816 The Matrix\",\"currency\":\"\",\"list_price\":16.43,\"price\":10.48,\"shipping\":\"US:::5.55 USD\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=v2v203z2w233c4a4z2&tid=1&seq=1765119914&plt=6f663a086d2b6be50641b26edcbef4ce\",\"updated_t\":1694754104},{\"merchant\":\"Sears\",\"domain\":\"sears.com\",\"title\":\"MATRIX, THE(BD/10TH ANNIVERSAR\",\"currency\":\"\",\"list_price\":\"\",\"price\":19.74,\"shipping\":\"Free Shipping\",\"condition\":\"New\",\"availability\":\"Out of Stock\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=v2r2y2t20333d4a4&tid=1&seq=1765119914&plt=4879363dbfaa975a434894257a83b22b\",\"updated_t\":1412729119},{\"merchant\":\"ShopTV\",\"domain\":\"shopthetv.com\",\"title\":\"The Matrix Blu-Ray\",\"currency\":\"\",\"list_price\":\"\",\"price\":19.98,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=w2s243u2v2x2f4b4&tid=1&seq=1765119914&plt=0be1c288bc103429939fcc974fece810\",\"updated_t\":1450431452},{\"merchant\":\"Rakuten(Buy.com)\",\"domain\":\"rakuten.com\",\"title\":\"Matrix (Blu-ray)\",\"currency\":\"\",\"list_price\":\"\",\"price\":26.18,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=u2p213131313c474z2&tid=1&seq=1765119914&plt=ca9e52f370905ab66afd315236491864\",\"updated_t\":1560956705},{\"merchant\":\"Best Buy\",\"domain\":\"bestbuy.com\",\"title\":\"The Matrix [10th Anniversary] [Blu-ray] [1999]\",\"currency\":\"\",\"list_price\":\"\",\"price\":12.99,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=w2w2x22323236454&tid=1&seq=1765119914&plt=a238d883ddec0207121c34108ce242fd\",\"updated_t\":1711952593},{\"merchant\":\"Fye.com\",\"domain\":\"fye.com\",\"title\":\"Matrix [10th Anniversary] [Blu-ray](Blu-ray) (new)\",\"currency\":\"\",\"list_price\":\"\",\"price\":5.97,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=w2x2y2t2v243e474&tid=1&seq=1765119914&plt=a5630e3fa34cd2a4483e54f04a775483\",\"updated_t\":1514927106},{\"merchant\":\"SecondSpin.com\",\"domain\":\"secondspin.com\",\"title\":\"Matrix [10th Anniversary] [Blu-ray](Blu-ray) (used)\",\"currency\":\"\",\"list_price\":\"\",\"price\":7.99,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=x2u25323z213b4a4&tid=1&seq=1765119914&plt=7db6f9322ae93e22b2b073c84bd4e6d4\",\"updated_t\":1438533540},{\"merchant\":\"Wal-Mart.com\",\"domain\":\"walmart.com\",\"title\":\"Matrix  The 10th Anniversary (BD) (Blu-ray 10th Anniversary Edition) [Blu-ray]\",\"currency\":\"\",\"list_price\":16,\"price\":9.99,\"shipping\":\"Free Shipping\",\"condition\":\"New\",\"availability\":\"Out of Stock\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=y2s2x2u2z203d4d4&tid=1&seq=1765119914&plt=23486b765e2deb32bb33dce1ed65edb7\",\"updated_t\":1755455344},{\"merchant\":\"Alibris\",\"domain\":\"alibris.com\",\"title\":\"matrix\",\"currency\":\"\",\"list_price\":\"\",\"price\":9.48,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=x2s203y2w263c4b4x2&tid=1&seq=1765119914&plt=15e85fa9d34e76d653975dc588129417\",\"updated_t\":1755043115},{\"merchant\":\"Alibris UK\",\"domain\":\"alibris.co.uk\",\"title\":\"matrix 10th anniversary blu ray\",\"currency\":\"GBP\",\"list_price\":\"\",\"price\":5.99,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=x2s203y2w263b464z2&tid=1&seq=1765119914&plt=e69e54599a136d83312ed75494e99ca4\",\"updated_t\":1723506300},{\"merchant\":\"DVD Planet\",\"domain\":\"dvdplanet.com\",\"title\":\"Matrix - BLU-RAY\",\"currency\":\"\",\"list_price\":\"\",\"price\":9.61,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=13v2031323x27454&tid=1&seq=1765119914&plt=03a8c1416864a3f26fb8ffed1dcf22c1\",\"updated_t\":1459397159},{\"merchant\":\"Target\",\"domain\":\"target.com\",\"title\":\"The Matrix (10th Anniversary Edition)(Blu-ray)\",\"currency\":\"\",\"list_price\":\"\",\"price\":9.99,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=u2q2y2133303c4d4x2&tid=1&seq=1765119914&plt=9318d36da44837197c69aefe4fea5c1a\",\"updated_t\":1764999310},{\"merchant\":\"11 Main\",\"domain\":\"11Main.com\",\"title\":\"MATRIX:10TH ANNIVERSARY\",\"currency\":\"\",\"list_price\":\"\",\"price\":18.68,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=u2r2x2w24303f4b4y2&tid=1&seq=1765119914&plt=deb34c20da674c2c592d6b4c26eb83d5\",\"updated_t\":1437986507},{\"merchant\":\"Newegg Canada\",\"domain\":\"newegg.ca\",\"title\":\"The Matrix (Blu-ray / WS / 1999)\",\"currency\":\"CAD\",\"list_price\":\"\",\"price\":48.84,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=v2u2z2u21323d4d4z2&tid=1&seq=1765119914&plt=52aa5daafa3a3cd0ffe402841e44d8e7\",\"updated_t\":1542004996},{\"merchant\":\"Newegg Business\",\"domain\":\"neweggbusiness.com\",\"title\":\"The Matrix (Blu-ray / WS / 1999)\",\"currency\":\"\",\"list_price\":\"\",\"price\":16.15,\"shipping\":\"Free Shipping\",\"condition\":\"New\",\"availability\":\"Out of Stock\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=v2v223231303d474w2&tid=1&seq=1765119914&plt=a38d3dbc85a3a1effd95e272f0453056\",\"updated_t\":1526487172},{\"merchant\":\"Pricefalls.com\",\"domain\":\"pricefalls.com\",\"title\":\"Matrix:10th Anniversary\",\"currency\":\"\",\"list_price\":\"\",\"price\":12.72,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=v2q2530343z294c4u2&tid=1&seq=1765119914&plt=4ae3331b943e97e7dfe13482fcc78d07\",\"updated_t\":1484934673},{\"merchant\":\"Movie Zyng\",\"domain\":\"moviezyng.com\",\"title\":\"The Matrix\",\"currency\":\"\",\"list_price\":19.98,\"price\":18.98,\"shipping\":\"\",\"condition\":\"New\",\"availability\":\"\",\"link\":\"https://www.upcitemdb.com/norob/alink/?id=v2r243z2y2538494r2&tid=1&seq=1765119914&plt=9d5c71fb22805632928a28b379d8cc81\",\"updated_t\":1532689931}],\"asin\":\"B00319ECGK\",\"elid\":\"232117779246\"}]}",
+                    "latency": 0,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id",
+                    "callbacks": []
+                }
+            ],
+            "responseMode": null,
+            "streamingMode": null,
+            "streamingInterval": 0
+        }
+    ],
+    "rootChildren": [
+        {
+            "type": "route",
+            "uuid": "f0be3255-d116-4525-af10-739ecd7680a7"
+        }
+    ],
+    "proxyMode": false,
+    "proxyHost": "",
+    "proxyRemovePrefix": false,
+    "tlsOptions": {
+        "enabled": true,
+        "type": "CERT",
+        "pfxPath": "",
+        "certPath": "/Users/danfincher/workspace/MovieInventory/server/server.crt",
+        "keyPath": "/Users/danfincher/workspace/MovieInventory/server/server.key",
+        "caPath": "/Users/danfincher/workspace/MovieInventory/server/rootCA.pem",
+        "passphrase": ""
+    },
+    "cors": true,
+    "headers": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        },
+        {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+        },
+        {
+            "key": "Access-Control-Allow-Methods",
+            "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+        },
+        {
+            "key": "Access-Control-Allow-Headers",
+            "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+        }
+    ],
+    "proxyReqHeaders": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ],
+    "proxyResHeaders": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ],
+    "data": [],
+    "callbacks": []
+}

@@ -27,5 +27,10 @@ dist-ssr
 **/.env
 
 # Cert
-**/server.key
-**/server.cert
+**/*.key
+**/*.cert
+**/*.crt
+**/*.csr
+**/*.pem
+**/*.srl
+**/server.ext
